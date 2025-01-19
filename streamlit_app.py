@@ -120,11 +120,14 @@ uploaded_file = st.file_uploader("Upload MusicXML File", type=["musicxml", "xml"
 if uploaded_file:
     # Parse MusicXML files
     st.write("Processing file...")
-    print("Uploading MusicXML file...")  # Debug print
-    score = converter.parse(uploaded_file)
-    print("MusicXML file parsed successfully.")  # Debug print
-    
+    print("Uploading MusicXML file...")  # Debug print 
+    try:
+        score = converter.parse(uploaded_file)
+   
+    except: 
     # Extract drum tracks and their measures as linked lists
+        print ("nope ")
+        
     drum_measures = extract_drum_tracks(score)
     print("Drum tracks and measures extracted.")  # Debug print
     
