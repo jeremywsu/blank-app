@@ -115,10 +115,10 @@ def display_drum_measures_linked_lists(measures_data):
 st.title("MusicXML Drum Track Analyzer with Linked Lists and Duplicate Counting")
 st.write("Upload a MusicXML file to analyze drum tracks and display each measure as a linked list with note counts.")
 
-uploaded_file = st.file_uploader("Upload MusicXML File", type=["musicxml", "mxl"])
+uploaded_file = st.file_uploader("Upload MusicXML File", type=["musicxml", "xml"])
 
 if uploaded_file:
-    # Parse MusicXML file
+    # Parse MusicXML files
     st.write("Processing file...")
     print("Uploading MusicXML file...")  # Debug print
     score = converter.parse(uploaded_file)
